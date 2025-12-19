@@ -7,11 +7,8 @@ How to make a clean architecture note app - Jetpack Compose, MVVM, CRUD, ROOM
 
 
 # Todos
-
 ----------------------
-
-Push to GitHub 
-
+* \[x] Push to GitHub 
 * \[x] Add date in each note column | 12/19/2025		
 * \[x] Sort by date
 * \[ ] Upgrade to material 3
@@ -23,12 +20,8 @@ Push to GitHub
 
 
 # Screenshots
-
 ----------------------
-
-![Screenshot 1](/screenshots/Screenshot 2025-12-18 133625.png)
-
-![Screenshot 2](/screenshots/Screenshot 2025-12-19 140821.png)
-
-![Screenshot 3](/screenshots/Screenshot 2025-12-19 140839.png)
+![Screenshot 1](/screenshots/Screenshot%202025-12-18%20133625.png)
+![Screenshot 2](/screenshots/Screenshot%202025-12-19%20140821.png)
+![Screenshot 3](/screenshots/Screenshot%202025-12-19%20140839.png)
 
