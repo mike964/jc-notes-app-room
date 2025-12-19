@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.notes
+package com.example.philippnoteapp.presentation.notes
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.*
@@ -17,9 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.philippnoteapp.feature_note.presentation.notes.components.NoteItem
-import com.example.philippnoteapp.feature_note.presentation.notes.components.OrderSection
-import com.example.philippnoteapp.feature_note.presentation.util.Screen
+import com.example.philippnoteapp.presentation.notes.components.NoteItem
+import com.example.philippnoteapp.presentation.notes.components.OrderSection
+import com.example.philippnoteapp.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

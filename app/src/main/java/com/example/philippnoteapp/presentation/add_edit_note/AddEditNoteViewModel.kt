@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.add_edit_note
+package com.example.philippnoteapp.presentation.add_edit_note
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.philippnoteapp.domain.model.InvalidNoteException
 import com.example.philippnoteapp.domain.model.Note
 import com.example.philippnoteapp.domain.use_case.NoteUseCases
+import com.example.philippnoteapp.presentation.add_edit_note.AddEditNoteEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

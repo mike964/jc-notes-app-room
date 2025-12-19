@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.add_edit_note
+package com.example.philippnoteapp.presentation.add_edit_note
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.Animatable
@@ -23,7 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.philippnoteapp.domain.model.Note
-import com.example.philippnoteapp.feature_note.presentation.add_edit_note.components.TransparentHintTextField
+import com.example.philippnoteapp.presentation.add_edit_note.components.TransparentHintTextField
+import com.example.philippnoteapp.presentation.add_edit_note.AddEditNoteEvent
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 

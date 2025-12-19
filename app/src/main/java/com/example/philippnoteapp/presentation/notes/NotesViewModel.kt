@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.notes
+package com.example.philippnoteapp.presentation.notes
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

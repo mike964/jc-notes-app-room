@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.notes
+package com.example.philippnoteapp.presentation.notes
 
 import com.example.philippnoteapp.domain.model.Note
 import com.example.philippnoteapp.domain.util.NoteOrder

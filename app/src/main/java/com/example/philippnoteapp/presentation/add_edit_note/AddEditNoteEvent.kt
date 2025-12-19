@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.add_edit_note
+package com.example.philippnoteapp.presentation.add_edit_note
 
 import androidx.compose.ui.focus.FocusState
 

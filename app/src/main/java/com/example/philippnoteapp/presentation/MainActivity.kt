@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation
+package com.example.philippnoteapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,9 +11,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.philippnoteapp.feature_note.presentation.add_edit_note.AddEditNoteScreen
-import com.example.philippnoteapp.feature_note.presentation.notes.NotesScreen
-import com.example.philippnoteapp.feature_note.presentation.util.Screen
+import com.example.philippnoteapp.presentation.add_edit_note.AddEditNoteScreen
+import com.example.philippnoteapp.presentation.notes.NotesScreen
+import com.example.philippnoteapp.presentation.util.Screen
 import com.example.philippnoteapp.ui.theme.PhilippNoteAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

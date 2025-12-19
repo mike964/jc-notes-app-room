@@ -1,4 +1,4 @@
-package com.example.philippnoteapp.feature_note.presentation.notes.components
+package com.example.philippnoteapp.presentation.notes.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
