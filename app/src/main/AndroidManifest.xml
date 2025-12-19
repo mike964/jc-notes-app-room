@@ -14,7 +14,7 @@
         android:theme="@style/Theme.PhilippNoteApp"
         tools:targetApi="31">
         <activity
-            android:name=".feature_note.presentation.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.PhilippNoteApp">
             <intent-filter>

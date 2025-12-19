@@ -1,7 +1,9 @@
 package com.example.philippnoteapp.presentation.notes.components
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
@@ -11,17 +13,23 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
 import com.example.philippnoteapp.domain.model.Note
+import java.time.Instant
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun NoteItem(
@@ -29,7 +37,7 @@ fun NoteItem(
     modifier: Modifier = Modifier,
     cornerRadius: Dp = 10.dp,
     cutCornerSize: Dp = 30.dp,
-    onDeleteClick: () -> Unit
+    onDeleteClick: () -> Unit,
 ) {
     Box(
         modifier = modifier
@@ -62,8 +70,8 @@ fun NoteItem(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
-                .padding(end = 32.dp)
+                .padding(12.dp)
+//                .padding(end = 32.dp)
         ) {
             Text(
                 text = note.title,
@@ -80,6 +88,11 @@ fun NoteItem(
                 maxLines = 10,
                 overflow = TextOverflow.Ellipsis
             )
+            Spacer(modifier = Modifier.height(12.dp))
+//            Text(note.timestamp.toString())
+            Text(convertEpochToDateString(note.timestamp), color = Color(
+                ColorUtils.blendARGB(note.color, 0x000000, 0.4f)
+            ),)
         }
         IconButton(
             onClick = onDeleteClick,
@@ -92,4 +105,16 @@ fun NoteItem(
             )
         }
     }
+}
+
+fun convertEpochToDateString(x: Long): String {
+    // 1. Convert epoch milliseconds to Instant
+    val instant = Instant.ofEpochMilli(x)
+    // 2. Convert Instant to a human-readable format using system default time zone
+//    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+        .withZone(ZoneId.systemDefault())
+    val formattedDate = formatter.format(instant)
+//    println("Formatted Date: $formattedDate")
+    return formattedDate
 }
