@@ -9,8 +9,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Save
 import androidx.compose.material3.*
-//import androidx.compose.material.icons.filled.Save
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -25,7 +26,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.philippnoteapp.domain.model.Note
 import com.example.philippnoteapp.presentation.add_edit_note.components.TransparentHintTextField
-import com.example.philippnoteapp.presentation.add_edit_note.AddEditNoteEvent
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -73,7 +73,7 @@ fun AddEditNoteScreen(
                 containerColor = MaterialTheme.colorScheme.primary,
                 shape = RoundedCornerShape(16.dp) // Custom shape
             ) {
-//                Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
+                Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
             }
         },
 //        scaffoldState = scaffoldState

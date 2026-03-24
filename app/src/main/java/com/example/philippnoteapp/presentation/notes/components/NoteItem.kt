@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,9 +20,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.graphics.ColorUtils
 import com.example.philippnoteapp.domain.model.Note
 import java.time.Instant
@@ -67,29 +70,54 @@ fun NoteItem(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(12.dp)
-//                .padding(end = 32.dp)
+//                .padding(8.dp)
+//                .padding(end = 16.dp)
         ) {
-            Text(
-                text = note.title,
-//                style = MaterialTheme.typography.h6,
-                color = MaterialTheme.colorScheme.onSurface,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = note.content,
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(24.dp, 0.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = note.title,
+//                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 18.sp,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                IconButton(
+                    onClick = { },
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.StarBorder,
+                        contentDescription = "Starred"
+                    )
+                }
+            }
+//            Spacer(modifier = Modifier.height(8.dp))
+           Column(
+               modifier = Modifier
+                   .fillMaxSize()
+                .padding(12.dp , 2.dp)
+           ) {
+               Text(
+                   text = note.content,
 //                style = MaterialTheme.typography.body1,
-                color = MaterialTheme.colorScheme.onSurface,
-                maxLines = 10,
-                overflow = TextOverflow.Ellipsis
-            )
-            Spacer(modifier = Modifier.height(12.dp))
+                   color = MaterialTheme.colorScheme.onSurface,
+                   maxLines = 10,
+                   overflow = TextOverflow.Ellipsis
+               )
+               Spacer(modifier = Modifier.height(12.dp))
 //            Text(note.timestamp.toString())
-            Text(convertEpochToDateString(note.timestamp), color = Color(
-                ColorUtils.blendARGB(note.color, 0x000000, 0.4f)
-            ),)
+               Text(
+                   convertEpochToDateString(note.timestamp),
+                   color = Color(
+                       ColorUtils.blendARGB(note.color, 0x000000, 0.4f)
+                   ),
+               )
+           }
         }
         IconButton(
             onClick = onDeleteClick,
