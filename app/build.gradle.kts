@@ -71,9 +71,11 @@ dependencies {
     val hilt_version = "2.51.1" // Use latest stable version
     implementation("androidx.room:room-runtime:${room_version}")
     implementation("androidx.room:room-ktx:${room_version}")  // Kotlin extensions and Coroutines support
+    kapt("androidx.room:room-compiler:${room_version}")
+
     // # Hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
-    "kapt"("com.google.dagger:hilt-android-compiler:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
     // Hilt for Jetpack (ViewModel integration)
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0") // For Hilt with Compose Navigation
 }
